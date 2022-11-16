@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.sdj3.slaughterhouse_v2.protobuf";
+
+service SlaughterHouse {
+  rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
+  rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
+
+}
+
+message ProductGrpc {
+  int64 product_id = 1;
+  string product_type = 2;
+}
+
+message ProductId {
+  int64 product_id = 1;
+}
+
+message AnimalId {
+  int64 animal_id = 1;
+}

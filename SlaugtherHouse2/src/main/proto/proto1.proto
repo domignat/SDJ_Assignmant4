@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.sdj3.slaugtherhouse2.protobuf";
+
+service SlaughterHouse1 {
+  rpc createAnimal(AnimalGrpc) returns(AnimalResponse);
+  // rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
+  // rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
+}
+
+message AnimalResponse{
+}
+
+message AnimalGrpc{
+int64 registration_number = 1;
+string animal_name = 2;
+string animal_type = 3;
+double weight = 4;
+string origin = 5;
+LocalDateGrpc registration_date = 6;
+}
+
+message LocalDateGrpc{
+  int32 day = 1;
+  int32 month = 2;
+  int32 year = 3;
+}

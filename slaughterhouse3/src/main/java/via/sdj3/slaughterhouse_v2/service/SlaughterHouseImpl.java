@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Optional;
 
 @GRpcService
-
 public class SlaughterHouseImpl extends SlaughterHouseGrpc.SlaughterHouseImplBase{
     private final IProductRep productRepository;
     private final IAnimalRep animalRepository;
@@ -42,7 +41,7 @@ public class SlaughterHouseImpl extends SlaughterHouseGrpc.SlaughterHouseImplBas
         {
             List<AnimalPart> animalParts = animalPartRepository.getAnimalPartsFromProduct(product.get().getId());
             for (AnimalPart animalPart : animalParts) {
-                AnimalId animalId = AnimalId.newBuilder().setAnimalId(animalPart.getAnimal().getId()).build();
+                AnimalId animalId = AnimalId.newBuilder().setAnimalId(animalPart.getAnimal().getRegistrationNumber()).build();
                 responseObserver.onNext(animalId);
             }
             responseObserver.onCompleted();
@@ -60,7 +59,7 @@ public class SlaughterHouseImpl extends SlaughterHouseGrpc.SlaughterHouseImplBas
         }
         else
         {
-            List<AnimalPart> animalParts = animalPartRepository.getAnimalPartsFromAnimal(animal.get().getId());
+            List<AnimalPart> animalParts = animalPartRepository.getAnimalPartsFromAnimal(animal.get().getRegistrationNumber());
             for(AnimalPart animalPart: animalParts)
             {
                 ProductGrpc productDto = ProductGrpc.newBuilder()

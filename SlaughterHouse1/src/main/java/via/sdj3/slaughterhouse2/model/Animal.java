@@ -1,94 +1,46 @@
 package via.sdj3.slaughterhouse2.model;
 
+import lombok.*;
+
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "animals")
 public class Animal
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long registrationNumber;
-    @Column(name = "animalType")
-    private String animalType;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "weight")
+
+    @NotBlank(message = "Animal name cannot be null")
+    @Column(name = "animal_name")
+    private String animal_name;
+
+    @NotBlank(message = "Animal type cannot be null")
+    @Column(name = "animal_type")
+    private String animal_type;
+
+    @Min(value = 0,message = "Animal cannot weight less than 0")
+    @Max(value = 2000,message = "Animal cannot weight more than 2000")
+    @NotNull
+    @Column(name = "weight", nullable = false)
     private double weight;
+
     @Column(name = "origin")
     private String origin;
-    @Column(name = "regDate")
-    private LocalDate date;
 
-    public Animal(long regNo, String animalType, String name, double weight, String origin) {
-        this.registrationNumber = regNo;
-        this.animalType = animalType;
-        this.name = name;
-        this.weight = weight;
-        this.origin = origin;
-        this.date = LocalDate.now();
-    }
+    @Column(name = "date", nullable = false)
+    private LocalDate registration_date;
 
-    public Animal() {this.date = LocalDate.now();}
-
-    public long getRegistrationNumber()
-    {
-        return registrationNumber;
-    }
-
-    public String getAnimalType()
-    {
-        return animalType;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public double getWeight()
-    {
-        return weight;
-    }
-
-    public String getOrigin()
-    {
-        return origin;
-    }
-
-    public LocalDate getDate()
-    {
-        return date;
-    }
-
-    public void setRegistrationNumber(long registrationNumber) {
-        this.registrationNumber = registrationNumber;
-    }
-
-    public void setAnimalType(String animalType) {
-        this.animalType = animalType;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    @Override
-    public String toString() {
-        return "Animal: " + registrationNumber + ", " + animalType + ", " + name + ", " + weight + ", " + origin + ", Date: " + date;
-    }
 }

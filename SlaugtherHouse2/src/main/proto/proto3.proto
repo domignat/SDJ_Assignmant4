@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.sdj3.slaugtherhouse2.protobuf";
+
+service SlaughterHouse3 {
+  rpc sendTray(TrayGrpc) returns(TrayResponse);
+ // rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
+ // rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
+
+}
+
+message ProductGrpc {
+  int64 product_id = 1;
+  string product_type = 2;
+}
+
+message TrayGrpc{
+  int64 tray_id = 1;
+  string part_type = 2;
+  double max_weight = 3;
+  repeated AnimalPartGrpc parts = 4;
+}
+
+message AnimalPartGrpc{
+  int64 part_id = 1;
+  double part_weight = 2;
+  string part_name = 3;
+}
+
+message TrayResponse{
+
+}

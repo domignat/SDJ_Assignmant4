@@ -1,6 +1,7 @@
 package via.sdj3.slaughterhouse_v2.domain;
 
 import lombok.*;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -32,11 +33,18 @@ public class AnimalPart {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @ToString.Exclude
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @ToString.Exclude
+    @JoinColumn(name = "animal_id", nullable = false)
     private Animal animal;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @ToString.Exclude
+    @JoinColumn(name = "tray_id")
+    private Tray tray;
 
     public AnimalPart(int weight, String part_name, Product product, Animal animal) {
         this.weight = weight;

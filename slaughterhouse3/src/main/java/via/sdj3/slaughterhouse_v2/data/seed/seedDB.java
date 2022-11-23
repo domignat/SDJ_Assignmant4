@@ -36,15 +36,15 @@ public class seedDB implements CommandLineRunner {
         productRepository.deleteAll();
         animalRepository.deleteAll();
 
-        Product product1 = new Product("Product1");
-        Product product2 = new Product("Product2");
+        Product product1 = new Product("All Parts");
+        Product product2 = new Product("Whole Animal");
         Product productDB = productRepository.save(product1);
         productRepository.save(product2);
 
 
-        Animal animal1 = new Animal("Animal1","cow", 500,now);
-        Animal animal2 = new Animal("Animal2","sheep", 40,now);
-        Animal animal3 = new Animal("Animal3","chicken", 3,now);
+        Animal animal1 = new Animal("Animal1","cow", 500, "SunnyFarm", now);
+        Animal animal2 = new Animal("Animal2","sheep", 40, "SunnyFarm",now);
+        Animal animal3 = new Animal("Animal3","chicken", 3, "Elly's Farm",now);
 
         Animal animalDB1 = animalRepository.save(animal1);
         Animal animalDB2 = animalRepository.save(animal2);

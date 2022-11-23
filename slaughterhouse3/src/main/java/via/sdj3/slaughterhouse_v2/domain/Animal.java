@@ -1,6 +1,6 @@
 package via.sdj3.slaughterhouse_v2.domain;
-
 import lombok.*;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -15,11 +15,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Animal {
-
+@Table(name = "animals")
+public class Animal
+{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long registrationNumber;
 
     @NotBlank(message = "Animal name cannot be null")
     @Column(name = "animal_name")
@@ -33,15 +34,19 @@ public class Animal {
     @Max(value = 2000,message = "Animal cannot weight more than 2000")
     @NotNull
     @Column(name = "weight", nullable = false)
-    private int weight;
+    private double weight;
+
+    @Column(name = "origin")
+    private String origin;
 
     @Column(name = "registration_date", nullable = false)
     private LocalDate registration_date;
 
-    public Animal( String animal_name, String animal_type, int weight, LocalDate now) {
+    public Animal(String animal_name, String animal_type, double weight, String origin, LocalDate registration_date) {
         this.animal_name = animal_name;
         this.animal_type = animal_type;
         this.weight = weight;
-        this.registration_date = now;
+        this.origin = origin;
+        this.registration_date = registration_date;
     }
 }

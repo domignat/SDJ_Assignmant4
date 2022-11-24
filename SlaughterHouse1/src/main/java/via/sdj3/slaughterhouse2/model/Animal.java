@@ -17,8 +17,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 @Table(name = "animals")
-public class Animal
-{
+public class Animal {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long registrationNumber;
@@ -40,7 +40,7 @@ public class Animal
     @Column(name = "origin")
     private String origin;
 
-    @Column(name = "date", nullable = false)
+    @Column(name = "registration_date", nullable = false)
     private LocalDate registration_date;
 
 }

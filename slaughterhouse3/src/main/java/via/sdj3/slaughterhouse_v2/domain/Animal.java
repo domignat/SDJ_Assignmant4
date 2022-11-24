@@ -1,4 +1,5 @@
 package via.sdj3.slaughterhouse_v2.domain;
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,8 +17,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 @Table(name = "animals")
-public class Animal
-{
+public class Animal {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long registrationNumber;
@@ -42,11 +43,4 @@ public class Animal
     @Column(name = "registration_date", nullable = false)
     private LocalDate registration_date;
 
-    public Animal(String animal_name, String animal_type, double weight, String origin, LocalDate registration_date) {
-        this.animal_name = animal_name;
-        this.animal_type = animal_type;
-        this.weight = weight;
-        this.origin = origin;
-        this.registration_date = registration_date;
-    }
 }

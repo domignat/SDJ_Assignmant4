@@ -53,7 +53,5 @@ public class AnimalPart {
         this.weight = weight;
         this.part_name = part_name;
         this.animal = animal;
-        this.product = new Product();
-        this.tray = new Tray();
     }
 }

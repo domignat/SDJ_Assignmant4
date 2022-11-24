@@ -1,10 +1,9 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "via.sdj3.slaughterhouse_v2.protobuf";
+option java_package = "via.sdj3.slaugtherhouse2.protobuf";
 
 service SlaughterHouse3 {
-  rpc sendTray(TrayGrpc) returns(TrayResponse);
   rpc sendTrays(TraysGrpc) returns(TrayResponse);
   // rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
   // rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);

@@ -28,14 +28,9 @@ public class ProductPackagingLogic {
         this.trayRep = trayRep;
     }
 
-    public void storeTray(Tray tray)
-    {
-        trayRep.save(tray);
-    }
-
     public void makePackage(String type, List<Tray> trays)
     {
-        Product product = productRep.save(new Product());
+        Product product = new Product();
         if(type.equals("parts"))
         {
             String partType = trays.get(0).getPartType();
@@ -75,9 +70,6 @@ public class ProductPackagingLogic {
             product.setProduct_type(name);
             productRep.save(product);
             trayRep.delete(trays.get(0));
-
-
-
             for (int i=1;i<trays.size();i++)
             {
                 if(trays.get(i).getPartType().startsWith(name))

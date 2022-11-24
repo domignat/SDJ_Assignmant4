@@ -55,11 +55,10 @@ public final class Proto3 {
       "\nmax_weight\030\003 \001(\001\022\036\n\005parts\030\004 \003(\0132\017.Anima" +
       "lPartGrpc\"I\n\016AnimalPartGrpc\022\017\n\007part_id\030\001" +
       " \001(\003\022\023\n\013part_weight\030\002 \001(\001\022\021\n\tpart_name\030\003" +
-      " \001(\t\"\016\n\014TrayResponse2_\n\017SlaughterHouse3\022" +
-      "$\n\010sendTray\022\t.TrayGrpc\032\r.TrayResponse\022&\n" +
-      "\tsendTrays\022\n.TraysGrpc\032\r.TrayResponseB%\n" +
-      "!via.sdj3.slaugtherhouse2.protobufP\001b\006pr" +
-      "oto3"
+      " \001(\t\"\016\n\014TrayResponse29\n\017SlaughterHouse3\022" +
+      "&\n\tsendTrays\022\n.TraysGrpc\032\r.TrayResponseB" +
+      "%\n!via.sdj3.slaugtherhouse2.protobufP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

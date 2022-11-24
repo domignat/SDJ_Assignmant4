@@ -32,6 +32,10 @@ public class AnimalCutterLogic {
         this.client2 = client2;
     }
 
+    public Animal saveAnimal(Animal animal)
+    {
+        return animalRep.save(animal);
+    }
     public void cut(Animal animal)
     {
         List<AnimalPart> animalParts = new ArrayList<>();
@@ -119,7 +123,8 @@ public class AnimalCutterLogic {
                 break;
             default: break;
         }
-        putIntoTrays(animalParts);
+        List<AnimalPart> newAnimalParts = animalPartRep.saveAll(animalParts);
+        putIntoTrays(newAnimalParts);
     }
 
     public void putIntoTrays(List<AnimalPart> animalParts)
@@ -132,6 +137,7 @@ public class AnimalCutterLogic {
             trays.add(tray1);
             //client2.sendTray(tray1);
         }
-        client2.sendTrays(trays);
+        List<Tray> newTrays = trayRep.saveAll(trays);
+        client2.sendTrays(newTrays);
     }
 }

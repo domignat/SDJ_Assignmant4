@@ -1,8 +1,11 @@
 package via.sdj3.slaughterhouse_v2.domain;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Entity
 @Getter
@@ -22,4 +25,10 @@ public class Tray {
     @Column(name = "max_weight")
     private double maxWeight;
 
+    @Autowired
+    public Tray(String partType, double maxWeight)
+    {
+        this.partType = partType;
+        this.maxWeight = maxWeight;
+    }
 }

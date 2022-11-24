@@ -28,7 +28,8 @@ public class SlaughterHouse1 extends SlaughterHouse1Grpc.SlaughterHouse1ImplBase
     {
         LocalDate date = LocalDate.of(request.getRegistrationDate().getYear(), request.getRegistrationDate().getMonth(), request.getRegistrationDate().getDay());
         Animal animal = new Animal(request.getRegistrationNumber(), request.getAnimalName(), request.getAnimalType(), request.getWeight(), request.getOrigin(), date);
-        logic.cut(animal);
+        Animal newAnimal = logic.saveAnimal(animal);
+        logic.cut(newAnimal);
         responseObserver.onNext(AnimalResponse.newBuilder().build());
         responseObserver.onCompleted();
     }

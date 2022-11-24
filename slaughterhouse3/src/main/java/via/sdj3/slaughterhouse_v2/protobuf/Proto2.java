@@ -15,10 +15,10 @@ public final class Proto2 {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ProductGrpc_descriptor;
+    internal_static_TraysGrpc_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ProductGrpc_fieldAccessorTable;
+      internal_static_TraysGrpc_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_TrayGrpc_descriptor;
   static final 
@@ -43,27 +43,26 @@ public final class Proto2 {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014proto2.proto\"7\n\013ProductGrpc\022\022\n\nproduct" +
-      "_id\030\001 \001(\003\022\024\n\014product_type\030\002 \001(\t\"b\n\010TrayG" +
-      "rpc\022\017\n\007tray_id\030\001 \001(\003\022\021\n\tpart_type\030\002 \001(\t\022" +
-      "\022\n\nmax_weight\030\003 \001(\001\022\036\n\005parts\030\004 \003(\0132\017.Ani" +
-      "malPartGrpc\"I\n\016AnimalPartGrpc\022\017\n\007part_id" +
-      "\030\001 \001(\003\022\023\n\013part_weight\030\002 \001(\001\022\021\n\tpart_name" +
-      "\030\003 \001(\t\"\016\n\014TrayResponse27\n\017SlaughterHouse" +
-      "3\022$\n\010sendTray\022\t.TrayGrpc\032\r.TrayResponseB" +
-      "\'\n#via.sdj3.slaughterhouse_v2.protobufP\001" +
-      "b\006proto3"
+      "\n\014proto2.proto\"$\n\tTraysGrpc\022\027\n\004tray\030\001 \003(" +
+      "\0132\t.TrayGrpc\"b\n\010TrayGrpc\022\017\n\007tray_id\030\001 \001(" +
+      "\003\022\021\n\tpart_type\030\002 \001(\t\022\022\n\nmax_weight\030\003 \001(\001" +
+      "\022\036\n\005parts\030\004 \003(\0132\017.AnimalPartGrpc\"I\n\016Anim" +
+      "alPartGrpc\022\017\n\007part_id\030\001 \001(\003\022\023\n\013part_weig" +
+      "ht\030\002 \001(\001\022\021\n\tpart_name\030\003 \001(\t\"\016\n\014TrayRespo" +
+      "nse29\n\017SlaughterHouse3\022&\n\tsendTrays\022\n.Tr" +
+      "aysGrpc\032\r.TrayResponseB\'\n#via.sdj3.slaug" +
+      "hterhouse_v2.protobufP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_ProductGrpc_descriptor =
+    internal_static_TraysGrpc_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_ProductGrpc_fieldAccessorTable = new
+    internal_static_TraysGrpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ProductGrpc_descriptor,
-        new java.lang.String[] { "ProductId", "ProductType", });
+        internal_static_TraysGrpc_descriptor,
+        new java.lang.String[] { "Tray", });
     internal_static_TrayGrpc_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_TrayGrpc_fieldAccessorTable = new

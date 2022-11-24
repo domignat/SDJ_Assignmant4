@@ -1,6 +1,7 @@
 package via.sdj3.slaughterhouse_v2.domain;
 
 import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,7 +20,4 @@ public class Product {
     @Column(name = "product_type")
     private String product_type;
 
-    public Product(String product_type) {
-        this.product_type = product_type;
-    }
 }

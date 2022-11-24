@@ -26,6 +26,7 @@ public class AnimalServiceImpl implements AnimalService{
     @Override
     public Animal create(Animal animal)
     {
+        animal.setRegistration_date(LocalDate.now());
         Animal animalDb = animalRepository.save(animal);
         client.createAnimal(animalDb);
         return animalDb;

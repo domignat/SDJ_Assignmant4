@@ -15,6 +15,11 @@ public final class Proto3 {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TraysGrpc_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TraysGrpc_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ProductGrpc_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -43,41 +48,49 @@ public final class Proto3 {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014proto3.proto\"7\n\013ProductGrpc\022\022\n\nproduct" +
-      "_id\030\001 \001(\003\022\024\n\014product_type\030\002 \001(\t\"b\n\010TrayG" +
-      "rpc\022\017\n\007tray_id\030\001 \001(\003\022\021\n\tpart_type\030\002 \001(\t\022" +
-      "\022\n\nmax_weight\030\003 \001(\001\022\036\n\005parts\030\004 \003(\0132\017.Ani" +
-      "malPartGrpc\"I\n\016AnimalPartGrpc\022\017\n\007part_id" +
-      "\030\001 \001(\003\022\023\n\013part_weight\030\002 \001(\001\022\021\n\tpart_name" +
-      "\030\003 \001(\t\"\016\n\014TrayResponse27\n\017SlaughterHouse" +
-      "3\022$\n\010sendTray\022\t.TrayGrpc\032\r.TrayResponseB" +
-      "%\n!via.sdj3.slaugtherhouse2.protobufP\001b\006" +
-      "proto3"
+      "\n\014proto3.proto\"$\n\tTraysGrpc\022\027\n\004tray\030\001 \003(" +
+      "\0132\t.TrayGrpc\"7\n\013ProductGrpc\022\022\n\nproduct_i" +
+      "d\030\001 \001(\003\022\024\n\014product_type\030\002 \001(\t\"b\n\010TrayGrp" +
+      "c\022\017\n\007tray_id\030\001 \001(\003\022\021\n\tpart_type\030\002 \001(\t\022\022\n" +
+      "\nmax_weight\030\003 \001(\001\022\036\n\005parts\030\004 \003(\0132\017.Anima" +
+      "lPartGrpc\"I\n\016AnimalPartGrpc\022\017\n\007part_id\030\001" +
+      " \001(\003\022\023\n\013part_weight\030\002 \001(\001\022\021\n\tpart_name\030\003" +
+      " \001(\t\"\016\n\014TrayResponse2_\n\017SlaughterHouse3\022" +
+      "$\n\010sendTray\022\t.TrayGrpc\032\r.TrayResponse\022&\n" +
+      "\tsendTrays\022\n.TraysGrpc\032\r.TrayResponseB%\n" +
+      "!via.sdj3.slaugtherhouse2.protobufP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_ProductGrpc_descriptor =
+    internal_static_TraysGrpc_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_TraysGrpc_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TraysGrpc_descriptor,
+        new java.lang.String[] { "Tray", });
+    internal_static_ProductGrpc_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_ProductGrpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProductGrpc_descriptor,
         new java.lang.String[] { "ProductId", "ProductType", });
     internal_static_TrayGrpc_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_TrayGrpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TrayGrpc_descriptor,
         new java.lang.String[] { "TrayId", "PartType", "MaxWeight", "Parts", });
     internal_static_AnimalPartGrpc_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_AnimalPartGrpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AnimalPartGrpc_descriptor,
         new java.lang.String[] { "PartId", "PartWeight", "PartName", });
     internal_static_TrayResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_TrayResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TrayResponse_descriptor,

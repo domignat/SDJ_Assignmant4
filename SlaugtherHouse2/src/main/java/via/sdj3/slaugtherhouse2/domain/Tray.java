@@ -1,6 +1,7 @@
 package via.sdj3.slaugtherhouse2.domain;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
@@ -23,4 +24,11 @@ public class Tray {
 
     @Column(name = "max_weight")
     private double maxWeight;
+
+    @Autowired
+    public Tray(String partType, double maxWeight)
+    {
+        this.partType = partType;
+        this.maxWeight = maxWeight;
+    }
 }

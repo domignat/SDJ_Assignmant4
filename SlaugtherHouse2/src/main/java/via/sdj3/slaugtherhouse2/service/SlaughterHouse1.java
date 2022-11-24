@@ -26,9 +26,10 @@ public class SlaughterHouse1 extends SlaughterHouse1Grpc.SlaughterHouse1ImplBase
     @Override
     public void createAnimal(AnimalGrpc request, StreamObserver<AnimalResponse> responseObserver)
     {
-        //animalgrpc -> animal ... send to logic to cut
-        LocalDate date = LocalDate.of(request.getRegistrationDate().getDay(), request.getRegistrationDate().getMonth(), request.getRegistrationDate().getYear());
+        LocalDate date = LocalDate.of(request.getRegistrationDate().getYear(), request.getRegistrationDate().getMonth(), request.getRegistrationDate().getDay());
         Animal animal = new Animal(request.getRegistrationNumber(), request.getAnimalName(), request.getAnimalType(), request.getWeight(), request.getOrigin(), date);
         logic.cut(animal);
+        responseObserver.onNext(AnimalResponse.newBuilder().build());
+        responseObserver.onCompleted();
     }
 }

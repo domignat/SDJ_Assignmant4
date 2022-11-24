@@ -45,6 +45,37 @@ public final class SlaughterHouse3Grpc {
     return getSendTrayMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<via.sdj3.slaugtherhouse2.protobuf.TraysGrpc,
+      via.sdj3.slaugtherhouse2.protobuf.TrayResponse> getSendTraysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "sendTrays",
+      requestType = via.sdj3.slaugtherhouse2.protobuf.TraysGrpc.class,
+      responseType = via.sdj3.slaugtherhouse2.protobuf.TrayResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<via.sdj3.slaugtherhouse2.protobuf.TraysGrpc,
+      via.sdj3.slaugtherhouse2.protobuf.TrayResponse> getSendTraysMethod() {
+    io.grpc.MethodDescriptor<via.sdj3.slaugtherhouse2.protobuf.TraysGrpc, via.sdj3.slaugtherhouse2.protobuf.TrayResponse> getSendTraysMethod;
+    if ((getSendTraysMethod = SlaughterHouse3Grpc.getSendTraysMethod) == null) {
+      synchronized (SlaughterHouse3Grpc.class) {
+        if ((getSendTraysMethod = SlaughterHouse3Grpc.getSendTraysMethod) == null) {
+          SlaughterHouse3Grpc.getSendTraysMethod = getSendTraysMethod =
+              io.grpc.MethodDescriptor.<via.sdj3.slaugtherhouse2.protobuf.TraysGrpc, via.sdj3.slaugtherhouse2.protobuf.TrayResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "sendTrays"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sdj3.slaugtherhouse2.protobuf.TraysGrpc.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  via.sdj3.slaugtherhouse2.protobuf.TrayResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new SlaughterHouse3MethodDescriptorSupplier("sendTrays"))
+              .build();
+        }
+      }
+    }
+    return getSendTraysMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -94,14 +125,21 @@ public final class SlaughterHouse3Grpc {
   public static abstract class SlaughterHouse3ImplBase implements io.grpc.BindableService {
 
     /**
+     */
+    public void sendTray(via.sdj3.slaugtherhouse2.protobuf.TrayGrpc request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaugtherhouse2.protobuf.TrayResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendTrayMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
      * rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
      * </pre>
      */
-    public void sendTray(via.sdj3.slaugtherhouse2.protobuf.TrayGrpc request,
+    public void sendTrays(via.sdj3.slaugtherhouse2.protobuf.TraysGrpc request,
         io.grpc.stub.StreamObserver<via.sdj3.slaugtherhouse2.protobuf.TrayResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendTrayMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendTraysMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -113,6 +151,13 @@ public final class SlaughterHouse3Grpc {
                 via.sdj3.slaugtherhouse2.protobuf.TrayGrpc,
                 via.sdj3.slaugtherhouse2.protobuf.TrayResponse>(
                   this, METHODID_SEND_TRAY)))
+          .addMethod(
+            getSendTraysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                via.sdj3.slaugtherhouse2.protobuf.TraysGrpc,
+                via.sdj3.slaugtherhouse2.protobuf.TrayResponse>(
+                  this, METHODID_SEND_TRAYS)))
           .build();
     }
   }
@@ -132,15 +177,23 @@ public final class SlaughterHouse3Grpc {
     }
 
     /**
-     * <pre>
-     * rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
-     * rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
-     * </pre>
      */
     public void sendTray(via.sdj3.slaugtherhouse2.protobuf.TrayGrpc request,
         io.grpc.stub.StreamObserver<via.sdj3.slaugtherhouse2.protobuf.TrayResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSendTrayMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
+     * rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
+     * </pre>
+     */
+    public void sendTrays(via.sdj3.slaugtherhouse2.protobuf.TraysGrpc request,
+        io.grpc.stub.StreamObserver<via.sdj3.slaugtherhouse2.protobuf.TrayResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSendTraysMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -159,14 +212,21 @@ public final class SlaughterHouse3Grpc {
     }
 
     /**
+     */
+    public via.sdj3.slaugtherhouse2.protobuf.TrayResponse sendTray(via.sdj3.slaugtherhouse2.protobuf.TrayGrpc request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSendTrayMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
      * rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
      * </pre>
      */
-    public via.sdj3.slaugtherhouse2.protobuf.TrayResponse sendTray(via.sdj3.slaugtherhouse2.protobuf.TrayGrpc request) {
+    public via.sdj3.slaugtherhouse2.protobuf.TrayResponse sendTrays(via.sdj3.slaugtherhouse2.protobuf.TraysGrpc request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSendTrayMethod(), getCallOptions(), request);
+          getChannel(), getSendTraysMethod(), getCallOptions(), request);
     }
   }
 
@@ -185,19 +245,28 @@ public final class SlaughterHouse3Grpc {
     }
 
     /**
-     * <pre>
-     * rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
-     * rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaugtherhouse2.protobuf.TrayResponse> sendTray(
         via.sdj3.slaugtherhouse2.protobuf.TrayGrpc request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSendTrayMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
+     * rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<via.sdj3.slaugtherhouse2.protobuf.TrayResponse> sendTrays(
+        via.sdj3.slaugtherhouse2.protobuf.TraysGrpc request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSendTraysMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SEND_TRAY = 0;
+  private static final int METHODID_SEND_TRAYS = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -218,6 +287,10 @@ public final class SlaughterHouse3Grpc {
       switch (methodId) {
         case METHODID_SEND_TRAY:
           serviceImpl.sendTray((via.sdj3.slaugtherhouse2.protobuf.TrayGrpc) request,
+              (io.grpc.stub.StreamObserver<via.sdj3.slaugtherhouse2.protobuf.TrayResponse>) responseObserver);
+          break;
+        case METHODID_SEND_TRAYS:
+          serviceImpl.sendTrays((via.sdj3.slaugtherhouse2.protobuf.TraysGrpc) request,
               (io.grpc.stub.StreamObserver<via.sdj3.slaugtherhouse2.protobuf.TrayResponse>) responseObserver);
           break;
         default:
@@ -282,6 +355,7 @@ public final class SlaughterHouse3Grpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SlaughterHouse3FileDescriptorSupplier())
               .addMethod(getSendTrayMethod())
+              .addMethod(getSendTraysMethod())
               .build();
         }
       }

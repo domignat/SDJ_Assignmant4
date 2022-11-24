@@ -21,4 +21,5 @@ public class Tray {
 
     @Column(name = "max_weight")
     private double maxWeight;
+
 }

@@ -5,11 +5,15 @@ option java_package = "via.sdj3.slaugtherhouse2.protobuf";
 
 service SlaughterHouse3 {
   rpc sendTray(TrayGrpc) returns(TrayResponse);
- // rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
- // rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
+  rpc sendTrays(TraysGrpc) returns(TrayResponse);
+  // rpc getAnimalsFromProduct(ProductId) returns(stream AnimalId);
+  // rpc getProductsFromAnimal(AnimalId) returns(stream ProductGrpc);
 
 }
 
+message TraysGrpc{
+  repeated TrayGrpc tray = 1;
+}
 message ProductGrpc {
   int64 product_id = 1;
   string product_type = 2;

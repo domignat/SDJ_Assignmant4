@@ -6,6 +6,7 @@ import via.sdj3.slaugtherhouse2.data.repository.IAnimalPartRep;
 import via.sdj3.slaugtherhouse2.data.repository.IAnimalRep;
 import via.sdj3.slaugtherhouse2.data.repository.IProductRep;
 import via.sdj3.slaugtherhouse2.data.repository.ITrayRep;
+import via.sdj3.slaugtherhouse2.domain.Animal;
 
 @Service
 public class AnimalCutterLogic {
@@ -20,5 +21,10 @@ public class AnimalCutterLogic {
         this.animalPartRep = animalPartRep;
         this.productRep = productRep;
         this.trayRep = trayRep;
+    }
+
+    public void cut(Animal animal)
+    {
+
     }
 }

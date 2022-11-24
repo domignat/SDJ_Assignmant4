@@ -14,5 +14,5 @@ import java.util.List;
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
 
      List<Animal> findAllByOrigin(String origin);
-     List<Animal> findAllByDateEquals(Date date);
+    // List<Animal> findAllByDateEquals(Date date);
 }

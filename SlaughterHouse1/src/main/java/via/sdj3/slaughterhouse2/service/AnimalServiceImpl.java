@@ -8,8 +8,7 @@ import via.sdj3.slaughterhouse2.repository.AnimalRepository;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class AnimalServiceImpl implements AnimalService{
@@ -53,7 +52,9 @@ public class AnimalServiceImpl implements AnimalService{
 
     @Override
     public List<Animal> findAllByRegDate(LocalDate date) {
-        return animalRepository.findAllByDateEquals(Date.valueOf(date));
+       // return animalRepository.findAllByDateEquals(Date.valueOf(date));
+       List<Animal> animals = new ArrayList<Animal>();
+        return animals;
     }
 
     @Override
